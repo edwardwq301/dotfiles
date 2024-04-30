@@ -1,6 +1,7 @@
 require('keyblind')
 -- require('plugins')
-
+-- require('plugin_config/treesitter')
+-- require('plugin_config/nvimtree')
 -- utf8
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = 'utf-8'
@@ -81,4 +82,3 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
-
