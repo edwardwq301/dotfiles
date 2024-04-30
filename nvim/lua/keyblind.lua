@@ -23,3 +23,9 @@ map("n", "<A-l>", "<C-w>l", opt)
 
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+
+-- nvimTree
+map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
+
+-- nvim-treesitter 代码格式化
+map("n", "<leader>i", "gg=G", opt)
