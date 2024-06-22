@@ -5,12 +5,8 @@
 - clean: ['~']
 
 - link:
-    # ~/.config/fish: shell/fish/
-    ~/.config/nvim: nvim/
-    ~/.vimrc: nvim/init.vim
-    ~/.clangd: clang/clangd
     ~/.clang-format: clang/clang-format
-
+    ~/.tmux.conf: tmux.conf
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
