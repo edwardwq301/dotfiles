@@ -7,6 +7,7 @@
 - link:
     ~/.clang-format: clang/clang-format
     ~/.tmux.conf: tmux.conf
+    ~/.bash_aliases: bash_aliases
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
