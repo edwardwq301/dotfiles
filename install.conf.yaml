@@ -9,5 +9,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.config/nvim/:
         path: nvim/**
+        glob: true
+        create: true
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
