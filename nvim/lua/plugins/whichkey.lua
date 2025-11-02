@@ -9,14 +9,15 @@ return {
     wk.add({
       -- Group definitions
       { "<leader>d", group = "Debugger" },
-      { "<leader>f", group = "Find" },
+      { "<leader>f", group = "find" },
+      { "<leader>F", group = "File" },
       { "<leader>g", group = "Git" },
       { "<leader>l", group = "Lsp" },
       { "<leader>s", group = "Search" },
       { "<leader>w", group = "Window" },
 
       -- General
-      { "<leader>fw", "<cmd>w!<CR>", desc = "Save", nowait = true, remap = false },
+      { "<leader>Fw", "<cmd>w!<CR>", desc = "Save", nowait = true, remap = false },
 
       -- Top Pickers & Explorer
       { "<leader><space>", function() require("snacks").picker.smart({ filter = { cwd = true } }) end, desc = "Smart Find Files" },
@@ -45,6 +46,7 @@ return {
 
       -- LSP
       { "<leader>la", vim.lsp.buf.code_action, desc = "Show code actions" },
+       { "<leader>lq", vim.diagnostic.setloclist, desc = "Open diagnostic quickfix list" },
 
       -- LSP Navigation
       { "gd", function() require("snacks").picker.lsp_definitions() end, desc = "Go to Definition" },
@@ -66,6 +68,12 @@ return {
     })
 
     -- Direct mappings (not managed by which-key)
+    
+    -- Clear search highlight
+    vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' })
+    
+    -- Terminal mode exit
+    vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
     
     -- Navigation
     vim.keymap.set({ "n", "v" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, desc = "Move down (line-wrap aware)" })

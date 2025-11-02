@@ -65,3 +65,12 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   end,
   desc = "Disable automatic comment formatting"
 })
+
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = general_settings_group,
+  callback = function()
+    vim.hl.on_yank()
+  end,
+})
