@@ -7,7 +7,7 @@
 - link:
     ~/.clang-format: clang/clang-format
     ~/.tmux.conf: tmux.conf
-    ~/.bash_aliases: bash_aliases
-
+    ~/.config/nvim/:
+        path: nvim/**
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
