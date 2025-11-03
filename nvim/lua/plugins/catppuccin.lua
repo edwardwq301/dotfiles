@@ -46,7 +46,7 @@ return {
       },
       --  auto_integrations = true,
     })
-    
+
     -- 应用主题
     vim.cmd.colorscheme "catppuccin"
   end

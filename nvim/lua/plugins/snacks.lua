@@ -8,8 +8,8 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
-    lazygit = {enabled=false},
-    git = {enabled=true},
+    lazygit = { enabled = false },
+    git = { enabled = true },
     dashboard = { enabled = false },
     explorer = { enabled = true },
     indent = { enabled = true },

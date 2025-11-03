@@ -20,14 +20,14 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
   group = general_settings_group,
   pattern = {
-    "python","yml", "yaml", "json", "html", "css",
+    "python", "yml", "yaml", "json", "html", "css",
     "javascript", "typescript", "sh", "sql",
     "vue", "markdown"
   },
   callback = function()
-    vim.opt_local.shiftwidth = 2        -- Indentation width
-    vim.opt_local.tabstop = 2           -- Tab character width
-    vim.opt_local.softtabstop = 2       -- Soft tab width
+    vim.opt_local.shiftwidth = 2  -- Indentation width
+    vim.opt_local.tabstop = 2     -- Tab character width
+    vim.opt_local.softtabstop = 2 -- Soft tab width
   end,
   desc = "Set 2-space indentation for specific filetypes"
 })
