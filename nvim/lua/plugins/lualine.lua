@@ -5,16 +5,17 @@ return {
       options = {
         theme = 'auto',
         icons_enabled = true,
+        globalstatus = true,
         disabled_filetypes = {
+          winbar = {}, --winbar on top
           statusline = {},
-          winbar = {},
         },
       },
-      -- bottom
+      -- status line  in bottom
       sections = {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = {},
+        lualine_c = { 'filename' },
         lualine_x = {
           'encoding',
           -- 'fileformat',   -- unix, windows, apple
@@ -30,24 +31,6 @@ return {
         lualine_x = { 'location' },
         lualine_y = {},
         lualine_z = {}
-      },
-
-      tabline = {
-        lualine_a = {},
-        lualine_b = { 'branch' },
-        lualine_c = { 'filename' },
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {
-          {
-            'tabs',
-            mode = 2,
-            tabs_color = {
-              active = 'lualine_a_normal',     -- 使用 lualine 主题的活动颜色
-              inactive = 'lualine_a_inactive', -- 使用 lualine 主题的非活动颜色
-            },
-          }
-        }
       },
 
       winbar = {},
