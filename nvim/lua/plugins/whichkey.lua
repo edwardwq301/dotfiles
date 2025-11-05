@@ -5,98 +5,105 @@ return {
   config = function()
     local wk = require("which-key")
 
+    -- Register all mappings using the official spec
     wk.add({
       -- Group definitions
       { "<leader>d",       group = "Debugger" },
-      { "<leader>f",       group = "Find" },
+      { "<leader>f",       group = "find" },
       { "<leader>F",       group = "File" },
       { "<leader>g",       group = "Git" },
-      { "<leader>l",       group = "LSP" },
+      { "<leader>l",       group = "Lsp" },
       { "<leader>s",       group = "Search" },
       { "<leader>w",       group = "Window" },
 
       -- General
-      { "<leader>Fw",      "<cmd>w<CR>",                                                                     group = "File",       desc = "Save Current  File",               nowait = true,       remap = false },
+      { "<leader>Fw",      "<cmd>w!<CR>",                                                                    desc = "Save",                         nowait = true,      remap = false },
 
       -- Top Pickers & Explorer
-      { "<leader><space>", function() require("snacks").picker.smart({ filter = { cwd = true } }) end,       group = "Find",       desc = "Smart Find Files" },
-      { "<leader>/",       function() require("snacks").picker.grep({ hidden = true }) end,                  group = "Search",     desc = "Grep" },
-      { "<leader>e",       function() require("snacks").explorer() end,                                      group = "File",       desc = "File Explorer" },
+      { "<leader><space>", function() require("snacks").picker.smart({ filter = { cwd = true } }) end,       desc = "Smart Find Files" },
+      { "<leader>/",       function() require("snacks").picker.grep({ hidden = true }) end,                  desc = "Grep" },
+      { "<leader>e",       function() require("snacks").explorer() end,                                      desc = "File Explorer" },
 
       -- Find
-      { "<leader>fb",      function() require("snacks").picker.buffers() end,                                group = "Find",       desc = "Buffers" },
-      { "<leader>ff",      function() require("snacks").picker.files({ hidden = true, ignored = true }) end, group = "Find",       desc = "Find Files" },
+      { "<leader>fb",      function() require("snacks").picker.buffers() end,                                desc = "Buffers" },
+      { "<leader>ff",      function() require("snacks").picker.files({ hidden = true, ignored = true }) end, desc = "Find Files" },
 
       -- Git
-      { "<leader>gb",      function() require("snacks").picker.git_branches() end,                           group = "Git",        desc = "Git Branches" },
-      { "<leader>gl",      function() require("snacks").picker.git_log() end,                                group = "Git",        desc = "Git Log" },
-      { "<leader>gL",      function() require("snacks").picker.git_log_line() end,                           group = "Git",        desc = "Git Log Line" },
-      { "<leader>gs",      function() require("snacks").picker.git_status() end,                             group = "Git",        desc = "Git Status" },
-      { "<leader>gS",      function() require("snacks").picker.git_stash() end,                              group = "Git",        desc = "Git Stash" },
-      { "<leader>gd",      function() require("snacks").picker.git_diff() end,                               group = "Git",        desc = "Git Diff (Hunks)" },
-      { "<leader>gf",      function() require("snacks").picker.git_log_file() end,                           group = "Git",        desc = "Git Log File" },
-      { "<leader>gB",      function() require("snacks").gitbrowse() end,                                     group = "Git",        desc = "Git Browse",                       mode = { "n", "v" } },
-      { "<leader>gg",      function() require("snacks").lazygit() end,                                       group = "Git",        desc = "Lazygit" },
+      { "<leader>gb",      function() require("snacks").picker.git_branches() end,                           desc = "Git Branches" },
+      { "<leader>gl",      function() require("snacks").picker.git_log() end,                                desc = "Git Log" },
+      { "<leader>gL",      function() require("snacks").picker.git_log_line() end,                           desc = "Git Log Line" },
+      { "<leader>gs",      function() require("snacks").picker.git_status() end,                             desc = "Git Status" },
+      { "<leader>gS",      function() require("snacks").picker.git_stash() end,                              desc = "Git Stash" },
+      { "<leader>gd",      function() require("snacks").picker.git_diff() end,                               desc = "Git Diff (Hunks)" },
+      { "<leader>gf",      function() require("snacks").picker.git_log_file() end,                           desc = "Git Log File" },
+      { "<leader>gB",      function() require("snacks").gitbrowse() end,                                     desc = "Git Browse",                   mode = { "n", "v" } },
+      { "<leader>gg",      function() require("snacks").lazygit() end,                                       desc = "Lazygit" },
 
       -- Search
-      { "<leader>sb",      function() require("snacks").picker.lines() end,                                  group = "Search",     desc = "Buffer Lines" },
-      { "<leader>sd",      function() require("snacks").picker.diagnostics() end,                            group = "Search",     desc = "Diagnostics" },
-      { "<leader>sD",      function() require("snacks").picker.diagnostics_buffer() end,                     group = "Search",     desc = "Buffer Diagnostics" },
+      { "<leader>sb",      function() require("snacks").picker.lines() end,                                  desc = "Buffer Lines" },
+      { "<leader>sd",      function() require("snacks").picker.diagnostics() end,                            desc = "Diagnostics" },
+      { "<leader>sD",      function() require("snacks").picker.diagnostics_buffer() end,                     desc = "Buffer Diagnostics" },
+
+      -- LSP
+      { "<leader>la",      vim.lsp.buf.code_action,                                                          desc = "Show code actions" },
+      { "<leader>lq",      vim.diagnostic.setloclist,                                                        desc = "Open diagnostic quickfix list" },
 
       -- LSP Navigation
-      { "gd",              function() require("snacks").picker.lsp_definitions() end,                        group = "LSP",        desc = "Go to Definition" },
-      { "gD",              function() require("snacks").picker.lsp_declarations() end,                       group = "LSP",        desc = "Go to Declaration" },
-      { "gr",              function() require("snacks").picker.lsp_references() end,                         group = "LSP",        desc = "References",                       nowait = true },
-      { "gI",              function() require("snacks").picker.lsp_implementations() end,                    group = "LSP",        desc = "Go to Implementation" },
-      { "gy",              function() require("snacks").picker.lsp_type_definitions() end,                   group = "LSP",        desc = "Go to Type Definition" },
+      { "gd",              function() require("snacks").picker.lsp_definitions() end,                        desc = "Go to Definition" },
+      { "gD",              function() require("snacks").picker.lsp_declarations() end,                       desc = "Go to Declaration" },
+      { "gr",              function() require("snacks").picker.lsp_references() end,                         desc = "References",                   nowait = true },
+      { "gI",              function() require("snacks").picker.lsp_implementations() end,                    desc = "Go to Implementation" },
+      { "gy",              function() require("snacks").picker.lsp_type_definitions() end,                   desc = "Go to Type Definition" },
 
       -- Window Management
-      { "<leader>w\\",     "<cmd>vsp<CR>",                                                                   group = "Window",     desc = "Vertical split" },
-      { "<leader>w-",      "<cmd>sp<CR>",                                                                    group = "Window",     desc = "Horizontal split" },
-      { "<leader>wh",      "<C-w>h",                                                                         group = "Window",     desc = "Go to left window" },
-      { "<leader>wj",      "<C-w>j",                                                                         group = "Window",     desc = "Go to lower window" },
-      { "<leader>wk",      "<C-w>k",                                                                         group = "Window",     desc = "Go to upper window" },
-      { "<leader>wl",      "<C-w>l",                                                                         group = "Window",     desc = "Go to right window" },
-      { "<leader>wq",      "<C-w>c",                                                                         group = "Window",     desc = "Close window" },
-      { "<leader>wo",      "<C-w>o",                                                                         group = "Window",     desc = "Close other windows" },
-      { "<leader>w=",      "<C-w>=",                                                                         group = "Window",     desc = "Balance windows" },
-
-      -- Navigation
-      { "j",               "v:count == 0 ? 'gj' : 'j'",                                                      group = "Navigation", desc = "Move down (line-wrap aware)",      expr = true,         mode = { "n", "v" } },
-      { "k",               "v:count == 0 ? 'gk' : 'k'",                                                      group = "Navigation", desc = "Move up (line-wrap aware)",        expr = true,         mode = { "n", "v" } },
-      { "L",               "g_",                                                                             group = "Navigation", desc = "Go to line end",                   mode = { "n", "v" } },
-      { "H",               "^",                                                                              group = "Navigation", desc = "Go to line start",                 mode = { "n", "v" } },
-
-      -- Scrolling
-      { "<C-d>",           "<C-d>zz",                                                                        group = "Scrolling",  desc = "Scroll down with cursor centering" },
-      { "<C-u>",           "<C-u>zz",                                                                        group = "Scrolling",  desc = "Scroll up with cursor centering" },
-
-      -- Editing
-      { "<C-BS>",          "<C-w>",                                                                          group = "Editing",    desc = "Delete previous word",             mode = "i" },
-      { ">",               ">gv",                                                                            group = "Editing",    desc = "Indent and keep selection",        mode = "v" },
-      { "<",               "<gv",                                                                            group = "Editing",    desc = "Unindent and keep selection",      mode = "v" },
-      { "J",               ":move '>+1<CR>gv-gv",                                                            group = "Editing",    desc = "Move selection down",              mode = "x" },
-      { "K",               ":move '<-2<CR>gv-gv",                                                            group = "Editing",    desc = "Move selection up",                mode = "x" },
-      { "<C-/>",           "gc",                                                                             group = "Editing",    desc = "Toggle comment",                   mode = { "n", "v" }, remap = true },
-
-      -- Window navigation
-      { "<C-h>",           "<C-w>h",                                                                         group = "Window",     desc = "Go to left window" },
-      { "<C-j>",           "<C-w>j",                                                                         group = "Window",     desc = "Go to lower window" },
-      { "<C-k>",           "<C-w>k",                                                                         group = "Window",     desc = "Go to upper window" },
-      { "<C-l>",           "<C-w>l",                                                                         group = "Window",     desc = "Go to right window" },
-
-      -- Folding
-      { "<CR>",            "za",                                                                             group = "Folding",    desc = "Toggle fold" },
-      { "<2-LeftMouse>",   "za",                                                                             group = "Folding",    desc = "Toggle fold (double-click)" },
-
-      -- Command mode
-      { ";",               ":",                                                                              group = "Command",    desc = "Enter command mode",               mode = { "n", "v" } },
-
-      -- Clear search highlight
-      { "<Esc>",           "<cmd>nohlsearch<CR>",                                                            group = "Search",     desc = "Clear search highlight" },
-
-      -- Terminal mode exit
-      { "<Esc><Esc>",      "<C-\\><C-n>",                                                                    group = "Terminal",   desc = "Exit terminal mode",               mode = "t" },
+      { "<leader>w\\",     "<cmd>vsp<CR>",                                                                   desc = "Vertical split" },
+      { "<leader>w-",      "<cmd>sp<CR>",                                                                    desc = "Horizontal split" },
+      { "<leader>wh",      "<C-w>h",                                                                         desc = "Go to left window" },
+      { "<leader>wj",      "<C-w>j",                                                                         desc = "Go to lower window" },
+      { "<leader>wk",      "<C-w>k",                                                                         desc = "Go to upper window" },
+      { "<leader>wl",      "<C-w>l",                                                                         desc = "Go to right window" },
+      { "<leader>wq",      "<C-w>c",                                                                         desc = "Close window" },
+      { "<leader>wo",      "<C-w>o",                                                                         desc = "Close other windows" },
+      { "<leader>w=",      "<C-w>=",                                                                         desc = "Balance windows" },
     })
+
+    -- Direct mappings (not managed by which-key)
+
+    -- Clear search highlight
+    vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' })
+
+    -- Terminal mode exit
+    vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+
+    -- Navigation
+    vim.keymap.set({ "n", "v" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, desc = "Move down (line-wrap aware)" })
+    vim.keymap.set({ "n", "v" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, desc = "Move up (line-wrap aware)" })
+    vim.keymap.set({ "n", "v" }, "L", "g_", { desc = "Go to line end" })
+    vim.keymap.set({ "n", "v" }, "H", "^", { desc = "Go to line start" })
+
+    -- Scrolling
+    vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down with cursor centering" })
+    vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up with cursor centering" })
+
+    -- Editing
+    vim.keymap.set("i", "<C-BS>", "<C-w>", { desc = "Delete previous word" })
+    vim.keymap.set("v", ">", ">gv", { desc = "Indent and keep selection" })
+    vim.keymap.set("v", "<", "<gv", { desc = "Unindent and keep selection" })
+    vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", { desc = "Move selection down" })
+    vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", { desc = "Move selection up" })
+    vim.keymap.set({ "n", "v" }, "<C-/>", "gc", { remap = true, desc = "Toggle comment" })
+
+    -- Window navigation
+    vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
+    vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
+    vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
+    vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+
+    -- Folding
+    vim.keymap.set("n", "<CR>", "za", { desc = "Toggle fold" })
+    vim.keymap.set("n", "<2-LeftMouse>", "za", { desc = "Toggle fold (double-click)" })
+
+    -- Command mode
+    vim.keymap.set({ "n", "v" }, ";", ":", { desc = "Enter command mode" })
   end,
 }
