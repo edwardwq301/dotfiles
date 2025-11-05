@@ -71,7 +71,12 @@ return {
     vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", { desc = "Move selection down" })
     vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", { desc = "Move selection up" })
     vim.keymap.set({ "n", "v" }, "<C-/>", "gc", { remap = true, desc = "Toggle comment" })
-
+    vim.keymap.set('n', '<leader>tx', function()
+      local view = vim.fn.winsaveview()
+      vim.cmd([[keeppatterns %s/\s\+$//e]])
+      vim.fn.winrestview(view)
+      print("✓ Trailing whitespace removed")
+    end, { desc = 'Trim trailing whitespace' })
 
     -- Folding
     vim.keymap.set("n", "<CR>", "za", { desc = "Toggle fold" })
