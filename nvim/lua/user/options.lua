@@ -28,6 +28,33 @@ vim.opt.undofile = false    -- Disable persistent undo
 vim.opt.writebackup = false -- Disable backup files
 vim.opt.confirm = true      -- Confirm dialog for unsaved changes
 
+-- Fold
+vim.opt.foldmethod = 'indent'
+vim.opt.foldlevel = 99 --The higher the more folded regions are open.
+vim.opt.foldlevelstart = 99
+vim.opt.foldcolumn = "0"
+
+_G.custom_fold_text = function()
+  local lines = vim.v.foldend - vim.v.foldstart + 1
+  local first_line = vim.fn.getline(vim.v.foldstart)
+  first_line = vim.fn.substitute(first_line, '^\\s*', '', '')
+
+  local text = first_line .. ' ... ' .. lines .. ' lines'
+  local width = vim.fn.winwidth(0) -- 获取当前窗口宽度
+
+  -- 保留原始缩进，文本右对齐
+  local indent = string.rep(' ', vim.fn.indent(vim.v.foldstart))
+  local content_width = width - vim.fn.strwidth(indent) - 2
+  local padding = string.rep(' ', math.max(0, content_width - vim.fn.strwidth(text)))
+
+  return indent .. text .. padding
+end
+
+vim.opt.foldtext = 'v:lua._G.custom_fold_text()'
+
+-- vim.opt.foldmethod = 'expr'
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
 -- ==============================================================================
 -- Search & Highlight
 -- ==============================================================================

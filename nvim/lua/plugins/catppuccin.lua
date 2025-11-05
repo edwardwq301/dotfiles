@@ -35,9 +35,9 @@ return {
         operators = {},
       },
       integrations = {
-        cmp = true,
+        cmp = false,
         gitsigns = true,
-        nvimtree = true,
+        nvimtree = false,
         notify = false,
         snacks = {
           enabled = true,
@@ -47,7 +47,7 @@ return {
       --  auto_integrations = true,
     })
 
-    -- 应用主题
-    vim.cmd.colorscheme "catppuccin"
+    -- vim.cmd.colorscheme "catppuccin"
+    vim.cmd [[colorscheme catppuccin-mocha]]
   end
 }
