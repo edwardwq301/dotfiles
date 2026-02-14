@@ -72,7 +72,6 @@ return {
     vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", { desc = "Move selection up" })
     vim.keymap.set({ "n", "v" }, "<C-/>", "gc", { remap = true, desc = "Toggle comment" })
 
-
     -- Folding
     vim.keymap.set("n", "<CR>", "za", { desc = "Toggle fold" })
 

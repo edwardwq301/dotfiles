@@ -1,6 +1,271 @@
 {
-  "Lua.diagnostics.disable": [
-    "undefined-doc-name",
-    "undefined-global"
-  ]
+  // ========== 编辑器核心设置 ==========
+  "editor.fontSize": 24,
+  "editor.suggestFontSize": 22,
+  "editor.fontFamily": " 'Hack JBM Ligatured CCG Regular','思源黑体 CN','Hack Nerd Font Mono','霞鹜文楷等宽','Consolas' ",
+  "editor.fontLigatures": true,
+  "editor.fontVariations": true,
+  "editor.codeLensFontFamily": "Hack Nerd Font Mono, '思源黑体 CN' ",
+  "editor.tabSize": 2,
+  "editor.indentSize": "tabSize",
+  "editor.wordWrap": "on",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "editor.minimap.enabled": false,
+  // "editor.guides.bracketPairs": "active",
+  "editor.showFoldingControls": "always",
+  "editor.foldingImportsByDefault": true,
+  "editor.unicodeHighlight.includeComments": true,
+  "editor.suggestSelection": "recentlyUsed",
+  "editor.suggest.matchOnWordStartOnly": false,
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.suggest.showStatusBar": true,
+  "editor.inlineSuggest.enabled": false,
+  "editor.formatOnSaveMode": "modifications",
+
+  // ========== 工作区与界面设置 ==========
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 5,
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.wrapTabs": true,
+  "window.title": "${rootName}",
+
+  // ========== 文件与搜索设置 ==========
+  "files.autoSave": "onWindowChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+  "search.exclude": {
+    "**/*.snap": true,
+    "**/*.svg": true,
+    "**/.git": true,
+    "**/.github": false,
+    "**/.nuxt": true,
+    "**/.output": true,
+    "**/.pnpm": true,
+    "**/.vscode": true,
+    "**/.yarn": true,
+    "**/assets": true,
+    "**/bower_components": true,
+    "**/dist/**": true,
+    "**/logs": true,
+    "**/node_modules": true,
+    "**/out/**": true,
+    "**/package-lock.json": true,
+    "**/pnpm-lock.yaml": true,
+    "**/public": true,
+    "**/temp": true,
+    "**/yarn.lock": true,
+    "**/CHANGELOG*": true,
+    "**/LICENSE*": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "explorer.copyRelativePathSeparator": "/",
+
+  // ========== 终端设置 ==========
+  "terminal.integrated.fontSize": 21,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorWidth": 2,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.enableMultiLinePasteWarning": "auto",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.defaultProfile.linux": "fish",
+  "terminal.integrated.suggest.enabled": true,
+  "terminal.integrated.suggest.quickSuggestions": {
+    "commands": "on",
+    "arguments": "on",
+    "unknown": "off"
+  },
+  "terminal.integrated.suggest.suggestOnTriggerCharacters": true,
+  "terminal.integrated.suggest.cdPath": "off",
+  "terminal.integrated.shellIntegration.decorationsEnabled": "overviewRuler",
+  "terminal.integrated.profiles.windows": {
+    "pwsh": {
+      "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "args": ["-NoLogo"],
+      "icon": "terminal-powershell"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    }
+  },
+
+  // ========== 调试控制台设置 ==========
+  "debug.console.fontSize": 18,
+  "debug.console.fontFamily": "Hack Nerd Font Mono, '思源黑体 CN' ",
+  "debug.console.lineHeight": 21,
+  "debug.onTaskErrors": "abort",
+  "scm.inputFontFamily": "editor",
+
+  // ========== Markdown 设置 ==========
+  "markdown.extension.toc.orderedList": true,
+  "markdown.extension.print.theme": "dark",
+  "markdown.preview.fontFamily": "'思源黑体 CN', Hack Nerd Font Mono ,'微软雅黑' , system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
+  "markdown-preview-enhanced.printBackground": true,
+  "markdown-preview-enhanced.enableHTML5Embed": true,
+  "markdown-preview-enhanced.HTML5EmbedUseLinkSyntax": true,
+  "markdown-preview-enhanced.previewTheme": "github-dark.css",
+  "markdown-preview-enhanced.revealjsTheme": "simple.css",
+  "markdown-preview-enhanced.codeBlockTheme": "auto.css",
+  "markdown-preview-enhanced.enablePreviewZenMode": true,
+
+  // ========== Git 版本控制设置 ==========
+  "git.suggestSmartCommit": false,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "never",
+  "git.blame.statusBarItem.enabled": true,
+  "git.blame.editorDecoration.enabled": false,
+  "git-graph.date.format": "ISO Date & Time",
+
+  // ========== 扩展特定设置 ==========
+  // Catppuccin 主题
+  "catppuccin.italicKeywords": false,
+  "catppuccin.italicComments": false,
+  "catppuccin.boldKeywords": true,
+
+  // 项目管理
+  "projectManager.sortList": "Name",
+  "projectManager.groupList": true,
+  "projectManager.removeCurrentProjectFromList": false,
+  "projectManager.tags": [],
+  "projectManager.git.baseFolders": ["D:\\\\codebase"],
+  "projectManager.git.maxDepthRecursion": 2,
+  "projectManager.vscode.baseFolders": ["P:\\\\codebases"],
+
+  // 图标主题
+  "material-icon-theme.activeIconPack": "vue",
+  "material-icon-theme.folders.theme": "specific",
+
+  // Live Server
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+
+  // 其他扩展
+  "redhat.telemetry.enabled": false,
+  "update.showReleaseNotes": false,
+  "chat.commandCenter.enabled": false,
+  "chat.agent.enabled": false,
+  "chat.disableAIFeatures": true,
+  "database-client.autoSync": true,
+  "task.allowAutomaticTasks": "on",
+  "conventionalCommits.gitmoji": false,
+  "conventionalCommits.showNewVersionNotes": false,
+  "GitCommitPlugin.ShowEmoji": false,
+
+  // ========== 远程开发设置 ==========
+  "remote.SSH.showLoginTerminal": true,
+  "remote.SSH.remoteServerListenOnSocket": true,
+  "remote.SSH.path": "D:\\Git\\usr\\bin\\ssh.exe",
+  "remote.SSH.remotePlatform": {
+    "fe-wq": "linux"
+  },
+
+  // ========== 语言服务器和调试器设置 ==========
+  // Clangd
+  "clangd.arguments": ["--function-arg-placeholders=0", "--completion-style=detailed", "--ranking-model=decision_forest", "--header-insertion=never"],
+  "clangd.inactiveRegions.opacity": 0.75,
+  "clangd.detectExtensionConflicts": false,
+
+  // Clang-Format
+  "clang-format.fallbackStyle": "Google",
+  "clang-format.language.apex.enable": false,
+  "clang-format.language.cuda.enable": false,
+  "clang-format.language.glsl.enable": false,
+  "clang-format.language.objective-c.enable": false,
+  "clang-format.language.java.enable": false,
+  "clang-format.language.javascript.enable": false,
+
+  // Python
+  "python.analysis.typeCheckingMode": "standard",
+  "python.analysis.completeFunctionParens": true,
+
+  // Go
+  "go.formatTool": "gofmt",
+
+  // Typst
+  "typst-lsp.experimentalFormatterMode": "on",
+  "typst-lsp.exportPdf": "onType",
+
+  // ========== 代码格式化设置 ==========
+  "prettier.printWidth": 150,
+  "css.format.braceStyle": "expand",
+  "diffEditor.renderSideBySide": false,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "notebook.lineNumbers": "on",
+
+  // ========== 语言特定设置 ==========
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.unicodeHighlight.ambiguousCharacters": true,
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    }
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[snippets]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[plsql]": {},
+
+  // ========== 其他设置 ==========
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.suggest.completeFunctionCalls": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.editor.enableCodeActions": false,
+  "github.copilot.chat.codeGeneration.useInstructionFiles": false,
+  "github.copilot.chat.copilotDebugCommand.enabled": false,
+  "github.copilot.chat.customInstructionsInSystemMessage": false,
+  "github.copilot.chat.newWorkspaceCreation.enabled": false
 }

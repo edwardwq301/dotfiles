@@ -74,3 +74,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.hl.on_yank()
   end,
 })
+
+vim.api.nvim_create_user_command('TrimTrailWhiteSpace', function()
+  local view = vim.fn.winsaveview()
+  vim.cmd([[keeppatterns %s/\s\+$//e]])
+  vim.fn.winrestview(view)
+end, {
+  desc = 'Trim trailing whitespace'
+})
