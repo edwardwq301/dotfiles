@@ -94,9 +94,7 @@
   "terminal.integrated.profiles.windows": {
     "pwsh": {
       "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
-      "args": [
-        "-NoLogo"
-      ],
+      "args": ["-NoLogo"],
       "icon": "terminal-powershell",
     },
     "Git Bash": {
@@ -137,13 +135,9 @@
   "projectManager.groupList": true,
   "projectManager.removeCurrentProjectFromList": false,
   "projectManager.tags": [],
-  "projectManager.git.baseFolders": [
-    "D:\\\\codebase"
-  ],
+  "projectManager.git.baseFolders": ["D:\\\\codebase"],
   "projectManager.git.maxDepthRecursion": 2,
-  "projectManager.vscode.baseFolders": [
-    "P:\\\\codebases"
-  ],
+  "projectManager.vscode.baseFolders": ["P:\\\\codebases"],
   // 图标主题
   "material-icon-theme.activeIconPack": "vue",
   "material-icon-theme.folders.theme": "specific",
@@ -170,12 +164,7 @@
   },
   // ========== 语言服务器和调试器设置 ==========
   // Clangd
-  "clangd.arguments": [
-    "--function-arg-placeholders=0",
-    "--completion-style=detailed",
-    "--ranking-model=decision_forest",
-    "--header-insertion=never"
-  ],
+  "clangd.arguments": ["--function-arg-placeholders=0", "--completion-style=detailed", "--ranking-model=decision_forest", "--header-insertion=never"],
   "clangd.inactiveRegions.opacity": 0.75,
   "clangd.detectExtensionConflicts": false,
   // Clang-Format
@@ -216,7 +205,7 @@
     },
   },
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "vscode.json-language-features",
   },
   // ========== 其他设置 ==========
   "js/ts.updateImportsOnFileMove.enabled": "always",
@@ -231,90 +220,11 @@
   "chat.disableAIFeatures": true,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "editor.aiStats.enabled": false,
-  "ruff.path": [
-    "D:/scoop/apps/ruff/current/ruff.exe"
-  ],
-  "eslint.format.enable": true,
-  "eslint.options": {
-    "overrideConfigFile": "D:\\codebase\\frontend\\eslint.config.mjs"
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
-  },
-  "eslint.rules.customizations": [
-    {
-      "rule": "style/*",
-      "severity": "off",
-      "fixable": true
-    },
-    {
-      "rule": "format/*",
-      "severity": "off",
-      "fixable": true
-    },
-    {
-      "rule": "*-indent",
-      "severity": "off",
-      "fixable": true
-    },
-    {
-      "rule": "*-spacing",
-      "severity": "off",
-      "fixable": true
-    },
-    {
-      "rule": "*-spaces",
-      "severity": "off",
-      "fixable": true
-    },
-    {
-      "rule": "*-order",
-      "severity": "off",
-      "fixable": true
-    },
-    {
-      "rule": "*-dangle",
-      "severity": "off",
-      "fixable": true
-    },
-    {
-      "rule": "*-newline",
-      "severity": "off",
-      "fixable": true
-    },
-    {
-      "rule": "*quotes",
-      "severity": "off",
-      "fixable": true
-    },
-    {
-      "rule": "*semi",
-      "severity": "off",
-      "fixable": true
-    }
-  ],
-  // 确保 ESLint 插件能处理的文件类型
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "vue",
-    "html",
-    "css",
-  ],
-  "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
+  "ruff.path": ["D:/scoop/apps/ruff/current/ruff.exe"],
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-  "[html]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 }
