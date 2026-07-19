@@ -118,10 +118,3 @@ vim.opt.guifont = "Hack:h16,Fira Code:h16,Source Han Sans SC:h16"
 vim.opt.clipboard = "unnamedplus" -- System clipboard integration
 vim.opt.spell = false             -- Spell checking
 vim.opt.spelllang = "en_us"       -- Spell check language
-
--- ==============================================================================
--- Plugin Specific Settings
--- ==============================================================================
-
--- Snacks plugin: disable animations
-vim.g.snacks_animate = false

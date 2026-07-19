@@ -8,6 +8,7 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
+    animate = { enabled = false },
     lazygit = { enabled = false },
     git = { enabled = true },
     dashboard = { enabled = false },
@@ -50,7 +51,7 @@ return {
     terminal = {
       enabled = true,
       win = { style = "terminal" },
-      shell = { 'pwsh' },
+      shell = vim.fn.executable("pwsh") == 1 and { "pwsh" } or { "bash" },
 
     }
   },
