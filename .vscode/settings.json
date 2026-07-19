@@ -4,7 +4,6 @@
   "editor.suggestFontSize": 22,
   "editor.fontFamily": " 'Hack JBM Ligatured CCG Regular','思源黑体 CN','Hack Nerd Font Mono','霞鹜文楷等宽','Consolas' ",
   "editor.fontLigatures": true,
-  "editor.fontVariations": true,
   "editor.codeLensFontFamily": "Hack Nerd Font Mono, '思源黑体 CN' ",
   "editor.tabSize": 2,
   "editor.indentSize": "tabSize",
@@ -12,7 +11,6 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.smoothScrolling": true,
   "editor.minimap.enabled": false,
-  // "editor.guides.bracketPairs": "active",
   "editor.showFoldingControls": "always",
   "editor.foldingImportsByDefault": true,
   "editor.unicodeHighlight.includeComments": true,
@@ -22,7 +20,6 @@
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.suggest.showStatusBar": true,
   "editor.inlineSuggest.enabled": false,
-  "editor.formatOnSaveMode": "modifications",
   // ========== 工作区与界面设置 ==========
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "material-icon-theme",
