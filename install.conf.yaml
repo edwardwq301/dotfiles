@@ -4,12 +4,28 @@
 
 - clean: ['~']
 
+# 可通过官方 apt 源直接安装的依赖，按依赖顺序执行
+- shell:
+    # 1) fish 最先，之后的配置依赖它
+    - [bash ecs-bootstrap/install-fish.sh, Installing fish]
+    # 2) git 随后，submodule / 插件拉取都需要
+    - [bash ecs-bootstrap/install-git.sh, Installing git]
+    # 3) shell 工具
+    - [bash ecs-bootstrap/install-tmux.sh, Installing tmux]
+    - [bash ecs-bootstrap/install-zoxide.sh, Installing zoxide]
+    # 4) 其余非官方源安装见 ecs-bootstrap/install-extra.sh
+
+# 所有依赖装完后再写入配置
 - link:
+    ~/.config/fish/config.fish:
+        path: ecs-bootstrap/config.fish
+        create: true
     ~/.clang-format: clang/clang-format
     ~/.tmux.conf: tmux.conf
     ~/.config/nvim/:
         path: nvim/**
         glob: true
         create: true
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
